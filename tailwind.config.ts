@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type {Config} from 'tailwindcss'
 
 const config: Config = {
   content: [
@@ -14,7 +14,16 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    debugScreens: {
+      style: {
+        backgroundColor: '#C0FFEE',
+        color: 'black',
+        position: 'fixed',
+        bottom: '10px',
+        left: '10px',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-debug-screens')],
 }
 export default config
