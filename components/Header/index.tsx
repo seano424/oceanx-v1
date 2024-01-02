@@ -1,8 +1,11 @@
-import React from 'react'
+'use client'
+
+import {useState} from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import {motion, AnimatePresence} from 'framer-motion'
 
-const navItems = [
+const desktopNavItems = [
   {href: '/', label: 'OceanXplorer'},
   {href: '/', label: 'Deep Sea Vehicles'},
   {href: '/', label: 'Science'},
@@ -19,11 +22,31 @@ const navItems = [
   {href: '/', label: 'Press Room'},
 ]
 
+const mobileNavItems = [
+  {href: '/', label: 'Home'},
+  {
+    href: '/',
+    label: 'About',
+    sublinks: [
+      {href: '/', label: 'Our DNA'},
+      {href: '/', label: 'Our People'},
+      {href: '/', label: 'Our Partnerships'},
+    ],
+  },
+  {href: '/', label: 'Press Room'},
+  {href: '/', label: 'Science'},
+  {href: '/', label: 'Projects'},
+  {href: '/', label: 'OceanXplorer'},
+  {href: '/', label: 'Deep Sea Vehicles'},
+]
+
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <nav className="flex py-5 px-8 items-center text-xs xl:text-sm">
       <div className="w-1/3 lg:flex gap-10 hidden">
-        {navItems.slice(0, 3).map((item) => (
+        {desktopNavItems.slice(0, 3).map((item) => (
           <Link
             key={item.label}
             className="hover:text-blue-500"
@@ -33,30 +56,38 @@ export default function Header() {
           </Link>
         ))}
       </div>
-      <Link
-        className="flex-1 flex justify-center hover:text-blue-500"
-        href={'/'}
-      >
-        <Image
-          className="hidden lg:block"
-          priority
-          src="/images/header/oceanx_logo_dark.svg"
-          alt="OceanXplorer"
-          width={200}
-          height={200}
-        />
+      <div className="flex-1 relative justify-center">
+        <Link
+          className="hover:text-blue-500 flex w-max mx-auto justify-center"
+          href={'/'}
+        >
+          <Image
+            className="hidden lg:block"
+            priority
+            src="/images/header/oceanx_logo_dark.svg"
+            alt="OceanXplorer"
+            width={200}
+            height={200}
+          />
 
-        <Image
-          className="lg:hidden"
-          priority
-          src="/images/header/oceanx_logo_dark.svg"
-          alt="OceanXplorer"
-          width={100}
-          height={100}
-        />
-      </Link>
+          <Image
+            className="lg:hidden"
+            priority
+            src="/images/header/oceanx_logo_dark.svg"
+            alt="OceanXplorer"
+            width={100}
+            height={100}
+          />
+        </Link>
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="absolute right-0 top-0 lg:hidden"
+        >
+          click me
+        </button>
+      </div>
       <div className="w-1/3 hidden lg:flex gap-10 justify-end">
-        {navItems.slice(3).map((item) => {
+        {desktopNavItems.slice(3).map((item) => {
           return item.sublinks ? (
             <div
               key={item.label}
@@ -88,6 +119,57 @@ export default function Header() {
           )
         })}
       </div>
+
+      {/* Mobile Nav Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            className="absolute overflow-scroll top-20 bg-white inset-0  h-screen flex flex-col px-8 lg:hidden"
+          >
+            {mobileNavItems.map((item) => {
+              return item.sublinks ? (
+                <div
+                  className="flex flex-col"
+                  key={item.label}
+                >
+                  <Link
+                    href={item.href}
+                    className="text-4xl border-t border-black py-5"
+                  >
+                    <span className="bg-gradient-to-r from-blue-800 to-black text-transparent bg-clip-text w-max">
+                      {item.label}
+                    </span>
+                  </Link>
+                  {item.sublinks.map((sublink) => (
+                    <Link
+                      key={sublink.label}
+                      className="pl-5 pb-5 text-2xl"
+                      href={sublink.href}
+                    >
+                      <span className="bg-gradient-to-r from-blue-800 to-black text-transparent bg-clip-text w-max">
+                        {sublink.label}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <Link
+                  className="text-4xl border-t border-black py-5 "
+                  key={item.label}
+                  href={item.href}
+                >
+                  <span className="bg-gradient-to-r from-blue-800 to-black text-transparent bg-clip-text w-max">
+                    {item.label}
+                  </span>
+                </Link>
+              )
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }
