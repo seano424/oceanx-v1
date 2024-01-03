@@ -43,8 +43,24 @@ const mobileNavItems = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const path01Variants = {
+    closed: {d: 'M 3 3 L 19 3'},
+    open: {d: 'M 3 3 L 23 22'},
+  }
+
+  const path02Variants = {
+    closed: {d: 'M 3 12.5 L 23 12.5', opacity: 1},
+    open: {d: 'M 3 12.5 L 23 12.5', opacity: 0},
+  }
+
+  const path03Variants = {
+    closed: {d: 'M 3 22 L 16 22'},
+    open: {d: 'M 3 22 L 23 3'},
+  }
+
   return (
-    <nav className="flex py-5 px-8 items-center text-xs xl:text-sm">
+    <nav className="flex py-5 px-8 items-center text-xs xl:text-sm text-black">
+      {/* First 3 Navigation Items */}
       <div className="w-1/3 lg:flex gap-10 hidden">
         {desktopNavItems.slice(0, 3).map((item) => (
           <Link
@@ -56,6 +72,8 @@ export default function Header() {
           </Link>
         ))}
       </div>
+
+      {/* Logo and Hamburger */}
       <div className="flex-1 relative justify-center">
         <Link
           className="hover:text-blue-500 flex w-max mx-auto justify-center"
@@ -83,9 +101,41 @@ export default function Header() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="absolute right-0 top-0 lg:hidden"
         >
-          click me
+          <div className="h-4 w-4">
+            <svg viewBox="0 0 25 25">
+              <motion.path
+                variants={path01Variants}
+                animate={isMenuOpen ? 'open' : 'closed'}
+                transition={{duration: 0.3}}
+                fill="transparent"
+                strokeWidth="3"
+                stroke="#010101"
+                strokeLinecap="round"
+              ></motion.path>
+              <motion.path
+                variants={path02Variants}
+                animate={isMenuOpen ? 'open' : 'closed'}
+                transition={{duration: 0.2}}
+                fill="transparent"
+                strokeWidth="3"
+                stroke="#010101"
+                strokeLinecap="round"
+              ></motion.path>
+              <motion.path
+                variants={path03Variants}
+                animate={isMenuOpen ? 'open' : 'closed'}
+                transition={{duration: 0.3}}
+                fill="transparent"
+                strokeWidth="3"
+                stroke="#010101"
+                strokeLinecap="round"
+              ></motion.path>
+            </svg>
+          </div>
         </button>
       </div>
+
+      {/* Last 3 Navigation Items */}
       <div className="w-1/3 hidden lg:flex gap-10 justify-end">
         {desktopNavItems.slice(3).map((item) => {
           return item.sublinks ? (
@@ -119,7 +169,6 @@ export default function Header() {
           )
         })}
       </div>
-
       {/* Mobile Nav Menu */}
       <AnimatePresence>
         {isMenuOpen && (
