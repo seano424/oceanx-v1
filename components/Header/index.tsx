@@ -1,9 +1,9 @@
 'use client'
 
-import {useState} from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import {motion, AnimatePresence} from 'framer-motion'
+import {useMobileMenuStore} from '@/store/useMobileMenuStore'
 
 const desktopNavItems = [
   {href: '/', label: 'OceanXplorer'},
@@ -41,7 +41,8 @@ const mobileNavItems = [
 ]
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const isOpen = useMobileMenuStore((state) => state.isOpen)
+  const toggleOpen = useMobileMenuStore((state) => state.toggle)
 
   const path01Variants = {
     closed: {d: 'M 3 3 L 19 3'},
@@ -97,15 +98,17 @@ export default function Header() {
             height={100}
           />
         </Link>
+
+        {/* Hamburger */}
         <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => toggleOpen()}
           className="absolute right-0 top-0 lg:hidden"
         >
           <div className="h-4 w-4">
             <svg viewBox="0 0 25 25">
               <motion.path
                 variants={path01Variants}
-                animate={isMenuOpen ? 'open' : 'closed'}
+                animate={isOpen ? 'open' : 'closed'}
                 transition={{duration: 0.3}}
                 fill="transparent"
                 strokeWidth="3"
@@ -114,7 +117,7 @@ export default function Header() {
               ></motion.path>
               <motion.path
                 variants={path02Variants}
-                animate={isMenuOpen ? 'open' : 'closed'}
+                animate={isOpen ? 'open' : 'closed'}
                 transition={{duration: 0.2}}
                 fill="transparent"
                 strokeWidth="3"
@@ -123,7 +126,7 @@ export default function Header() {
               ></motion.path>
               <motion.path
                 variants={path03Variants}
-                animate={isMenuOpen ? 'open' : 'closed'}
+                animate={isOpen ? 'open' : 'closed'}
                 transition={{duration: 0.3}}
                 fill="transparent"
                 strokeWidth="3"
@@ -174,9 +177,10 @@ export default function Header() {
           )
         })}
       </div>
+
       {/* Mobile Nav Menu */}
       <AnimatePresence>
-        {isMenuOpen && (
+        {isOpen && (
           <motion.div
             initial={{opacity: 0}}
             animate={{opacity: 1}}
