@@ -59,9 +59,9 @@ export default function Header() {
   }
 
   return (
-    <nav className="flex py-5 px-8 items-center text-xs xl:text-sm text-black">
+    <nav className="flex py-5 px-7 items-center text-xs xl:text-sm text-black fixed h-[56px] w-full bg-white z-50">
       {/* First 3 Navigation Items */}
-      <div className="w-1/3 lg:flex gap-10 hidden">
+      <div className="w-1/3 lg:flex gap-7 hidden">
         {desktopNavItems.slice(0, 3).map((item) => (
           <Link
             key={item.label}
@@ -136,7 +136,7 @@ export default function Header() {
       </div>
 
       {/* Last 3 Navigation Items */}
-      <div className="w-1/3 hidden lg:flex gap-10 justify-end">
+      <div className="w-1/3 hidden lg:flex gap-7 justify-end">
         {desktopNavItems.slice(3).map((item) => {
           return item.sublinks ? (
             <div
@@ -165,7 +165,12 @@ export default function Header() {
               </div>
             </div>
           ) : (
-            <Link href={item.href}>{item.label}</Link>
+            <Link
+              key={item.label}
+              href={item.href}
+            >
+              {item.label}
+            </Link>
           )
         })}
       </div>
@@ -176,7 +181,7 @@ export default function Header() {
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             exit={{opacity: 0}}
-            className="absolute overflow-scroll top-20 bg-white inset-0  h-screen flex flex-col px-8 lg:hidden"
+            className="absolute overflow-scroll top-[56px] bg-white inset-0  h-screen flex flex-col px-8 lg:hidden"
           >
             {mobileNavItems.map((item) => {
               return item.sublinks ? (

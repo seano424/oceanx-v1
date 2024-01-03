@@ -16,10 +16,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body className={clsx(inter.className, devMode && 'debug-screens')}>
-        <div className="fixed h-20 w-full bg-white z-50">
-          <Header />
-        </div>
-        <div className="relative top-20">{children}</div>
+        <Header />
+        {children}
       </body>
     </html>
   )
