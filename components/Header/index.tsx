@@ -151,7 +151,7 @@ export default function Header() {
               </Link>
               <div
                 key={item.label}
-                className="absolute -left-4 w-48 shadow-xl border rounded pt-4 gap-2 px-4 border-gray-50 flex flex-col group-hover:opacity-100 group-focus-within:opacity-100 opacity-0 transition-opacity duration-200 ease-linear"
+                className="absolute -left-4 w-48 shadow-xl border rounded pt-4 gap-2 px-4 bg-white border-gray-50 flex flex-col group-hover:opacity-100 group-focus-within:opacity-100 opacity-0 transition-opacity duration-200 ease-linear"
               >
                 {item.sublinks.map((sublink) => (
                   <Link
