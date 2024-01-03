@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function BringBack() {
   return (
     <div className="min-h-screen bg-black relative flex flex-col">
-      <div className="grid lg:grid-cols-2">
+      <div className="grid lg:grid-cols-2 relative top-32 z-10">
         <div className="flex flex-col col-start-2 text-white px-32">
           <h2 className="bg-gradient-to-r from-blue-500 to-white text-transparent bg-clip-text w-max text-7xl tracking-tight pb-7 font-bold">
             Bring Back
@@ -22,7 +22,7 @@ export default function BringBack() {
         </div>
       </div>
 
-      <div className="h-[800px] w-full bg-yellow-50 relative">
+      <div className="h-[1000px] w-full bg-yellow-50 relative">
         <Image
           fill
           className="object-cover"
