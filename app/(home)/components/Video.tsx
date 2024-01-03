@@ -16,7 +16,7 @@ export default function Video() {
           width={'100%'}
           height={'1000px'}
           controls
-          url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+          url="https://www.youtube.com/watch?v=j9P1qzQyGq0"
         />
       )}
     </div>
