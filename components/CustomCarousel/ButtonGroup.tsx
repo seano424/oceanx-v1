@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-export const ButtonGroup = ({
+const ButtonGroup = ({
   next,
   previous,
   ...rest
@@ -87,3 +87,5 @@ export const ButtonGroup = ({
     </div>
   )
 }
+
+export default ButtonGroup

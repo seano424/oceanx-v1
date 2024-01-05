@@ -6,7 +6,7 @@ import Carousel from 'react-multi-carousel'
 
 import 'react-multi-carousel/lib/styles.css'
 
-import {ButtonGroup} from '../ButtonGroup'
+import ButtonGroup from './ButtonGroup'
 import {carouselItems} from '@/libs/carouselItems'
 
 const responsive = {
