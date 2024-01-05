@@ -51,6 +51,7 @@ export default function Timeline() {
           <TimelineItem
             key={index}
             {...items}
+            lastItem={index === timelineItems.items.length - 1}
           />
         ))}
       </div>

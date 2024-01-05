@@ -22,4 +22,8 @@
   .px-base {
     @apply px-5 md:px-10 lg:px-52;
   }
+
+  .mx-base {
+    @apply mx-5 md:mx-10 lg:mx-52;
+  }
 }

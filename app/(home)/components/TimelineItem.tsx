@@ -13,6 +13,7 @@ interface TimelineItemProps {
   link: string
   label: string
   sideBySide: boolean
+  lastItem: boolean
 }
 
 export default function TimelineItem({
@@ -22,6 +23,7 @@ export default function TimelineItem({
   link,
   label,
   sideBySide,
+  lastItem,
 }: TimelineItemProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, {amount: 0.5})
@@ -31,7 +33,10 @@ export default function TimelineItem({
       {/* timeline line */}
       <div
         ref={ref}
-        className="col-span-1 h-[calc(100%-120px)] w-[1px] bg-white relative"
+        className={clsx(
+          'col-span-1 w-[1px] bg-white relative',
+          lastItem && 'h-[calc(100%-120px)]'
+        )}
       >
         <div className="bg-white rounded-full h-3 w-3 absolute -left-[6px]"></div>
         <div
