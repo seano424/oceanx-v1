@@ -31,7 +31,7 @@ export default function TimelineItem({
       {/* timeline line */}
       <div
         ref={ref}
-        className="col-span-1 h-full w-[1px] bg-white relative"
+        className="col-span-1 h-[calc(100%-120px)] w-[1px] bg-white relative"
       >
         <div className="bg-white rounded-full h-3 w-3 absolute -left-[6px]"></div>
         <div
@@ -52,7 +52,9 @@ export default function TimelineItem({
         <div
           className={clsx(
             'pb-16 leading-loose',
-            sideBySide && 'pr-10 lg:pr-20 min-w-64 lg:min-w-[400px]'
+            sideBySide
+              ? 'pr-10 lg:pr-20 min-w-64 lg:max-w-[500px]'
+              : 'lg:max-w-[700px]'
           )}
         >
           <span className="text-xs lg:text-sm font-mono tracking-widest">
@@ -68,11 +70,8 @@ export default function TimelineItem({
             {label}
           </Link>
         </div>
-        <div
-          className={clsx(
-            'h-[400px] lg:h-[600px] flex-shrink-0 w-full relative'
-          )}
-        >
+
+        <div className={clsx('h-[400px] lg:h-[600px] w-full relative')}>
           <Image
             fill
             src={image}

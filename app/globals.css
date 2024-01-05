@@ -16,6 +16,10 @@
   }
 
   .pl-base {
-    @apply px-5 md:pl-10 lg:pl-52;
+    @apply pl-5 md:pl-10 lg:pl-52;
+  }
+
+  .px-base {
+    @apply px-5 md:px-10 lg:px-52;
   }
 }

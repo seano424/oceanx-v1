@@ -4,6 +4,7 @@ import Explore from './components/Explore'
 import BringBack from './components/BringBack'
 import Carousel from '@/components/Carousel'
 import Timeline from './components/Timeline'
+import JoinOurMission from '@/components/JoinOurMission'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <BringBack />
       <Carousel />
       <Timeline />
+      <JoinOurMission />
     </main>
   )
 }

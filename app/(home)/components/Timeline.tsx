@@ -46,7 +46,7 @@ export default function Timeline() {
         </p>
       </div>
 
-      <div className="grid grid-cols-12 pr-20">
+      <div className="grid grid-cols-12 pr-20 md:pr-0">
         {timelineItems.items.map((items, index) => (
           <TimelineItem
             key={index}
