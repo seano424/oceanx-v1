@@ -30,7 +30,7 @@ const responsive = {
 
 export default function CustomCarousel() {
   return (
-    <div className="min-h-screen flex flex-col justify-center bg-black pl-10 lg:pl-52">
+    <div className="min-h-screen flex flex-col justify-center bg-black pl-base">
       <span className="uppercase border-b tracking-widest pb-2 text-white text-xs mb-12 w-max">
         Mission updates
       </span>

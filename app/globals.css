@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .pl-base {
+    @apply pl-10 lg:pl-52;
+  }
+}
