@@ -1,9 +1,5 @@
 import clsx from 'clsx'
-
-interface TextColumnProps {
-  text?: string
-  height?: 'short' | 'medium' | 'long'
-}
+import {TextColumnProps} from '@/types/textColumnProps'
 
 export default function TextColumn({
   text = 'Dive in',

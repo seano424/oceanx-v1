@@ -5,16 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import {useRef} from 'react'
 import {useInView} from 'framer-motion'
-
-interface TimelineItemProps {
-  year: string
-  description: string
-  image: string
-  link: string
-  label: string
-  sideBySide: boolean
-  lastItem: boolean
-}
+import {TimelineItemProps} from '@/types/timelineItemProps'
 
 export default function TimelineItem({
   year,
