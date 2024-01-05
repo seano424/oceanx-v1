@@ -45,7 +45,7 @@ export const ButtonGroup = ({
           </svg>
         </button>
 
-        <span className="text-white text-sm tracking-widest font-mono">
+        <span className="text-white text-xs tracking-widest font-mono">
           {currentSlide + 1}/{totalItems}
         </span>
 

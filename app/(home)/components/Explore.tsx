@@ -11,7 +11,7 @@ export default function Explore() {
         src="/images/home-page/explore.svg"
       />
       <div className="lg:w-1/2 min-h-screen flex flex-col lg:justify-center items-center relative">
-        <div className="flex flex-col pl-20 lg:pl-52 pr-32 text-white">
+        <div className="flex flex-col pl-10 lg:pl-52 pr-32 text-white">
           <h2 className="bg-gradient-to-r from-blue-500 to-white text-transparent bg-clip-text w-max text-7xl font-bold tracking-tight pb-7">
             Explore
           </h2>

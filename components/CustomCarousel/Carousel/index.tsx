@@ -30,8 +30,8 @@ const responsive = {
 
 export default function CustomCarousel() {
   return (
-    <div className="min-h-screen flex flex-col justify-center bg-black pl-20 lg:pl-52">
-      <span className="uppercase underline text-white underline-offset-4 text-xs pb-12">
+    <div className="min-h-screen flex flex-col justify-center bg-black pl-10 lg:pl-52">
+      <span className="uppercase border-b tracking-widest pb-2 text-white text-xs mb-12 w-max">
         Mission updates
       </span>
       <Carousel
@@ -49,10 +49,10 @@ export default function CustomCarousel() {
         {carouselItems.map((item) => (
           <div
             key={item.title}
-            className="grid grid-cols-12 h-[700px]"
+            className="grid grid-cols-12 h-[400px] lg:h-[700px]"
           >
             <div className="col-span-5 flex flex-col gap-10 text-white">
-              <h3 className="text-2xl">{item.title}</h3>
+              <h3 className="text-2xl pr-10">{item.title}</h3>
               <Link
                 className="uppercase border w-max border-white rounded px-10 py-3 text-xs"
                 href={item.link.href}
