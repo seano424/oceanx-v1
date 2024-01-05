@@ -49,10 +49,10 @@ export default function CustomCarousel() {
         {carouselItems.map((item) => (
           <div
             key={item.title}
-            className="grid grid-cols-12 h-[400px] lg:h-[700px]"
+            className="flex flex-col-reverse md:grid grid-cols-12 md:h-[400px] lg:h-[700px] pb-28"
           >
-            <div className="col-span-5 flex flex-col gap-10 text-white">
-              <h3 className="text-2xl pr-10">{item.title}</h3>
+            <div className="col-span-5 flex flex-col gap-5 md:gap-10 text-white">
+              <h3 className="text-xl md:text-2xl pr-10">{item.title}</h3>
               <Link
                 className="uppercase border w-max border-white rounded px-10 py-3 text-xs"
                 href={item.link.href}
@@ -60,7 +60,7 @@ export default function CustomCarousel() {
                 {item.link.label}
               </Link>
             </div>
-            <div className="col-span-7 relative">
+            <div className="h-[400px] md:h-auto col-span-7 relative">
               <Image
                 fill
                 className="object-center object-cover pb-20"
