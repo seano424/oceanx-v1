@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import MobileMenu from '../MobileMenu/Menu'
-import Hamburger from '../MobileMenu/Hamburger'
+import Hamburger from './MobileMenu/Hamburger'
+import MobileMenu from './MobileMenu'
 import {desktopNavItems} from '@/libs/navItems'
 
 export default function Header() {
