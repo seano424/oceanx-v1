@@ -3,6 +3,7 @@ import {Noto_Sans_HK} from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import clsx from 'clsx'
+import Footer from '@/components/Footer'
 
 const notoSansHK = Noto_Sans_HK({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -18,9 +19,16 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className={clsx(notoSansHK.className, devMode && 'debug-screens')}>
+      <body
+        className={clsx(
+          notoSansHK.className,
+          devMode && 'debug-screens',
+          'flex flex-col min-h-screen'
+        )}
+      >
         <Header />
-        {children}
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   )
