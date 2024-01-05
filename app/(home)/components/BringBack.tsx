@@ -5,16 +5,16 @@ export default function BringBack() {
   return (
     <div className="min-h-screen bg-black relative flex flex-col">
       <div className="grid lg:grid-cols-2 relative top-32 z-10">
-        <div className="flex flex-col col-start-2 text-white px-32">
-          <h2 className="bg-gradient-to-r from-blue-500 to-white text-transparent bg-clip-text w-max text-7xl tracking-tight pb-7 font-bold">
+        <div className="flex flex-col col-start-2 text-white px-5 lg:px-32">
+          <h2 className="h2 bg-gradient-to-r from-blue-500 to-white text-transparent bg-clip-text w-max pb-7">
             Bring Back
           </h2>
-          <p className="text-3xl pb-7">
+          <p className="p pb-7">
             We inspire change by bringing the ocean's never-before-seen wonders
             back to dry land.
           </p>
           <Link
-            className="underline uppercase underline-offset-4 hover:text-blue-500  transition-colors duration-300 ease-in-out w-max"
+            className="underline uppercase underline-offset-4 hover:text-blue-500  transition-colors duration-300 ease-in-out w-max text-sm md:text-base"
             href="/"
           >
             Learn more

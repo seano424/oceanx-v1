@@ -3,7 +3,15 @@
 @tailwind utilities;
 
 @layer utilities {
+  .h2 {
+    @apply text-4xl md:text-7xl font-bold tracking-tight;
+  }
+
+  .p {
+    @apply text-xl md:text-3xl;
+  }
+
   .pl-base {
-    @apply pl-10 lg:pl-52;
+    @apply px-5 md:pl-10 lg:pl-52;
   }
 }

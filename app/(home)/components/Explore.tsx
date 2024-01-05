@@ -7,20 +7,27 @@ export default function Explore() {
       <Image
         fill
         alt="explore"
-        className="object-center"
+        className="object-center hidden md:block"
         src="/images/home-page/explore.svg"
       />
-      <div className="lg:w-1/2 min-h-screen flex flex-col lg:justify-center items-center relative">
-        <div className="flex flex-col pl-base pr-32 text-white">
-          <h2 className="bg-gradient-to-r from-blue-500 to-white text-transparent bg-clip-text w-max text-7xl font-bold tracking-tight pb-7">
+      <Image
+        fill
+        alt="explore"
+        className="md:hidden "
+        src="/images/home-page/explore-sm.svg"
+      />
+
+      <div className="lg:w-1/2 min-h-screen flex flex-col lg:justify-center items-center relative mb-80 md:mb-auto">
+        <div className="flex flex-col pl-base md:pr-32 text-white">
+          <h2 className="h2 bg-gradient-to-r from-blue-500 to-white text-transparent bg-clip-text w-max pb-7">
             Explore
           </h2>
-          <p className="text-3xl pb-7">
+          <p className="p pb-7">
             We access the most unreachable parts of the ocean aboard the most
             advanced exploration and media vessel ever built.
           </p>
           <Link
-            className="underline uppercase underline-offset-4  hover:text-blue-500  transition-colors duration-300 ease-in-out w-max"
+            className="underline uppercase underline-offset-8  hover:text-blue-500  transition-colors duration-300 ease-in-out w-max text-sm md:text-base"
             href="/"
           >
             Learn more
