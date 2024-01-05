@@ -10,7 +10,7 @@ export default function Video() {
   }, [])
 
   return (
-    <div className="w-full relative min-h-screen">
+    <div className="w-full relative min-h-screen bg-black">
       {isClient && (
         <ReactPlayer
           width={'100%'}

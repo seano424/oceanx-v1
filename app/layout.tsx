@@ -1,10 +1,13 @@
 import type {Metadata} from 'next'
-import {Duru_Sans} from 'next/font/google'
+import {Noto_Sans_HK} from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import clsx from 'clsx'
 
-const duruSans = Duru_Sans({weight: '400', subsets: ['latin']})
+const notoSansHK = Noto_Sans_HK({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+})
 const devMode = process.env.NODE_ENV === 'development'
 
 export const metadata: Metadata = {
@@ -15,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className={clsx(duruSans.className, devMode && 'debug-screens')}>
+      <body className={clsx(notoSansHK.className, devMode && 'debug-screens')}>
         <Header />
         {children}
       </body>

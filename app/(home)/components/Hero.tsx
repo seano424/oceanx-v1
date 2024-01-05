@@ -1,3 +1,4 @@
+import TextColumn from '@/components/TextColumn'
 import Image from 'next/image'
 
 export default function Hero() {
@@ -28,12 +29,7 @@ export default function Hero() {
         </h1>
       </div>
 
-      <div className="hidden absolute bottom-0 left-0 right-0 md:flex flex-col items-center">
-        <p className="uppercase text-white text-sm tracking-widest font-light">
-          Dive In
-        </p>
-        <span className="h-16 w-[1px] bg-white mt-2"></span>
-      </div>
+      <TextColumn />
     </div>
   )
 }
