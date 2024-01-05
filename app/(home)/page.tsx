@@ -3,6 +3,7 @@ import Video from './components/Video'
 import Explore from './components/Explore'
 import BringBack from './components/BringBack'
 import Carousel from '@/components/Carousel'
+import Timeline from './components/Timeline'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Explore />
       <BringBack />
       <Carousel />
+      <Timeline />
     </main>
   )
 }

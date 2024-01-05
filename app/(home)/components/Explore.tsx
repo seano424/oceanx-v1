@@ -19,9 +19,7 @@ export default function Explore() {
 
       <div className="lg:w-1/2 min-h-screen flex flex-col lg:justify-center items-center relative mb-80 md:mb-auto">
         <div className="flex flex-col pl-base md:pr-32 text-white">
-          <h2 className="h2 bg-gradient-to-r from-blue-500 to-white text-transparent bg-clip-text w-max pb-7">
-            Explore
-          </h2>
+          <h2 className="h2 text-bg">Explore</h2>
           <p className="p pb-7">
             We access the most unreachable parts of the ocean aboard the most
             advanced exploration and media vessel ever built.

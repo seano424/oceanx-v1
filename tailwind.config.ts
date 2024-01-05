@@ -13,6 +13,14 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      animation: {
+        'scale-pulse': 'scale-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        'scale-pulse': {
+          '75%, 100%': {opacity: '0%', transform: 'scale(3.5)'},
+        },
+      },
     },
     debugScreens: {
       style: {

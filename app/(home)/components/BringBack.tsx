@@ -6,9 +6,7 @@ export default function BringBack() {
     <div className="min-h-screen bg-black relative flex flex-col">
       <div className="grid lg:grid-cols-2 relative top-32 z-10">
         <div className="flex flex-col col-start-2 text-white px-5 lg:px-32">
-          <h2 className="h2 bg-gradient-to-r from-blue-500 to-white text-transparent bg-clip-text w-max pb-7">
-            Bring Back
-          </h2>
+          <h2 className="h2 text-bg">Bring Back</h2>
           <p className="p pb-7">
             We inspire change by bringing the ocean's never-before-seen wonders
             back to dry land.

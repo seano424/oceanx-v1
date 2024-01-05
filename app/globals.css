@@ -11,6 +11,10 @@
     @apply text-xl md:text-3xl;
   }
 
+  .text-bg {
+    @apply bg-gradient-to-r from-blue-500 to-white text-transparent bg-clip-text w-max pb-7;
+  }
+
   .pl-base {
     @apply px-5 md:pl-10 lg:pl-52;
   }
