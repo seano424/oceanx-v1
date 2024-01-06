@@ -25,9 +25,9 @@ export default function Hamburger() {
   return (
     <button
       onClick={() => toggleOpen()}
-      className="absolute right-0 top-0 lg:hidden"
+      className="absolute right-0 -top-[5px] lg:hidden"
     >
-      <div className="h-4 w-4">
+      <div className="h-5 w-5">
         <svg viewBox="0 0 25 25">
           <motion.path
             variants={path01Variants}
