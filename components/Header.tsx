@@ -6,9 +6,9 @@ import {desktopNavItems} from '@/libs/navItems'
 
 export default function Header() {
   return (
-    <nav className="flex p-8 items-center text-xs xl:text-sm text-black fixed h-[56px] w-full bg-white z-50">
+    <nav className="flex p-[30px] items-center text-xs  text-black tracking-widest fixed h-[56px] w-full bg-white z-50">
       {/* First 3 Navigation Items */}
-      <div className="w-1/3 lg:flex gap-7 hidden">
+      <div className="w-1/3 lg:flex gap-4 hidden">
         {desktopNavItems.slice(0, 3).map((item) => (
           <Link
             key={item.label}
@@ -49,7 +49,7 @@ export default function Header() {
       </div>
 
       {/* Last 3 Navigation Items */}
-      <div className="w-1/3 hidden lg:flex gap-7 justify-end">
+      <div className="w-1/3 hidden lg:flex gap-4 justify-end">
         {desktopNavItems.slice(3).map((item) => {
           return item.sublinks ? (
             <div

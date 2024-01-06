@@ -6,6 +6,7 @@ export default function Hero() {
     <div className="bg-black relative h-screen w-full">
       <Image
         fill
+        priority
         className="hidden md:block object-top object-cover"
         src="/images/home-page/hero-image.png"
         alt="Homepage Hero Image"
@@ -14,6 +15,7 @@ export default function Hero() {
 
       <Image
         fill
+        priority
         className="md:hidden object-top object-cover"
         src="/images/home-page/hero-image-sm.jpeg"
         alt="Homepage Hero Image"
